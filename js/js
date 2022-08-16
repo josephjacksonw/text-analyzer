@@ -1,0 +1,53 @@
+// Business Logic
+function textCensor(input) {
+  let wordArray = input.split(" ");
+  const naughty = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];  
+  let error = "bad word found";
+  let output = wordArray;
+  wordArray.forEach(function(element) {
+    console.log(element, typeof(element));
+    if (element === "zoinks") {
+      console.log(element);
+      output = error;
+    } else if (element === "puppeteer") {
+      output = error;
+    } else if (element === "biffaroni") {
+      output = error;
+    } else if (element === "loopdaloop") {
+      output = error;
+    }
+  })
+  return output;
+}
+
+// we'll run 2 for loops, one for the inputted list and one for the naugthy filter
+// for each word in the list, we'll check to see if its one of the nuaghty words
+
+function numberOfOccurrencesInText(word, text) {
+  const textArray = text.split(" ");
+  let wordCount = 0;
+  textArray.forEach(function(element) {
+    if (element.toLowerCase().includes(word.toLowerCase())) {
+      wordCount++
+    }
+  });
+  return wordCount;
+}
+
+
+
+
+function wordCounter(text) {
+  if (text.trim().length === 0) {
+    return 0;
+  }
+  
+  let wordCount = 0;
+  const textArray = text.split(" ");
+  textArray.forEach(function(element) {
+    if (!Number(element)) {
+      wordCount++;
+    }
+  });
+  return wordCount;
+}
